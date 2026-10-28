@@ -1,5 +1,6 @@
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
-import { createContext, useCallback, useMemo, useState } from 'react';
+import { createContext, useMemo } from 'react';
+import { useColorScheme } from 'react-native';
 import { generateBackgrounds, staticBackgroundStyles, } from '@/theme/backgrounds';
 import { generateBorderColors, generateBorderRadius, generateBorderWidths, staticBorderStyles, } from '@/theme/borders';
 import componentsGenerator from '@/theme/components';
@@ -8,20 +9,10 @@ import { generateGutters, staticGutterStyles } from '@/theme/gutters';
 import layout from '@/theme/layout';
 import generateConfig from '@/theme/ThemeProvider/generateConfig';
 export const ThemeContext = createContext(undefined);
-function ThemeProvider({ children = false, storage }) {
-    // Current theme variant
-    const [variant, setVariant] = useState(() => {
-        const storedTheme = storage.getString('theme');
-        if (storedTheme) {
-            return storedTheme;
-        }
-        storage.set('theme', 'default');
-        return 'default';
-    });
-    const changeTheme = useCallback((nextVariant) => {
-        setVariant(nextVariant);
-        storage.set('theme', nextVariant);
-    }, [storage]);
+function ThemeProvider({ children = false }) {
+    // Follow the system light/dark setting
+    const colorScheme = useColorScheme();
+    const variant = colorScheme === 'dark' ? 'dark' : 'default';
     // Flatten config with current variant
     const fullConfig = useMemo(() => {
         return generateConfig(variant);
@@ -82,8 +73,8 @@ function ThemeProvider({ children = false, storage }) {
         return componentsGenerator(theme);
     }, [theme]);
     const value = useMemo(() => {
-        return { ...theme, changeTheme, components, navigationTheme };
-    }, [theme, components, navigationTheme, changeTheme]);
+        return { ...theme, components, navigationTheme };
+    }, [theme, components, navigationTheme]);
     return (<ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>);
 }
 export default ThemeProvider;

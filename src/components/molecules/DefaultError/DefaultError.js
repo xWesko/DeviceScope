@@ -2,9 +2,8 @@ import { useErrorBoundary } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { useTheme } from '@/theme';
-import { IconByVariant } from '@/components/atoms';
 function DefaultErrorScreen({ onReset = undefined }) {
-    const { colors, fonts, gutters, layout } = useTheme();
+    const { fonts, gutters, layout } = useTheme();
     const { t } = useTranslation();
     const { resetBoundary } = useErrorBoundary();
     return (<View style={[
@@ -14,11 +13,10 @@ function DefaultErrorScreen({ onReset = undefined }) {
             gutters.gap_16,
             gutters.padding_16,
         ]}>
-      <IconByVariant height={42} path="fire" stroke={colors.red500} width={42}/>
-      <Text style={[fonts.gray800, fonts.bold, fonts.size_16]}>
+      <Text style={[fonts.text, fonts.bold, fonts.size_16]}>
         {t('error_boundary.title')}
       </Text>
-      <Text style={[fonts.gray800, fonts.size_12, fonts.alignCenter]}>
+      <Text style={[fonts.text, fonts.size_12, fonts.alignCenter]}>
         {t('error_boundary.description')}
       </Text>
 
@@ -26,7 +24,7 @@ function DefaultErrorScreen({ onReset = undefined }) {
                 resetBoundary();
                 onReset();
             }}>
-          <Text style={[fonts.gray800, fonts.size_16]}>
+          <Text style={[fonts.text, fonts.size_16]}>
             {t('error_boundary.cta')}
           </Text>
         </TouchableOpacity>) : undefined}

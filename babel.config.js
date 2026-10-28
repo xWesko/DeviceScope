@@ -1,4 +1,3 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
   plugins: [
     [
@@ -11,9 +10,7 @@ module.exports = {
         root: ['./src'],
       },
     ],
-    'inline-dotenv',
     '@babel/plugin-transform-export-namespace-from',
-    'react-native-worklets/plugin', // need to be the last plugin
   ],
   presets: ['module:@react-native/babel-preset'],
 };

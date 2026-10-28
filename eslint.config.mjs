@@ -1,11 +1,9 @@
 import eslintConfigPrettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
-import jest from 'eslint-plugin-jest';
 import perfectionist from 'eslint-plugin-perfectionist';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import testingLibrary from 'eslint-plugin-testing-library';
 import unicorn from 'eslint-plugin-unicorn';
 import { defineConfig } from 'eslint/config';
 
@@ -28,7 +26,6 @@ export default defineConfig(
   react.configs.flat.all,
   react.configs.flat['jsx-runtime'],
   reactRefresh.configs.recommended,
-  testingLibrary.configs['flat/react'],
   eslintConfigPrettier, // last
   {
     languageOptions: {
@@ -93,10 +90,6 @@ export default defineConfig(
               groupName: 'screens',
             },
             {
-              elementNamePattern: '@/test(/.+)?',
-              groupName: 'test',
-            },
-            {
               elementNamePattern: '@/theme(/.+)?',
               groupName: 'theme',
             },
@@ -111,7 +104,6 @@ export default defineConfig(
             ['builtin', 'external'],
             ['theme', 'hooks', 'navigation', 'translations'],
             ['components', 'screens'],
-            ['test'],
             'internal',
             'unknown',
           ],
@@ -122,7 +114,7 @@ export default defineConfig(
 
       'react-refresh/only-export-components': OFF,
       'react/forbid-component-props': OFF,
-      'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx', '.jsx'] }],
+      'react/jsx-filename-extension': [ERROR, { extensions: ['.js', '.jsx'] }],
       'react/jsx-max-depth': [ERROR, { max: 10 }],
       'react/jsx-no-bind': OFF,
       'react/jsx-no-literals': OFF,
@@ -168,13 +160,6 @@ export default defineConfig(
       '@typescript-eslint/no-unsafe-call': OFF,
       'no-undef': OFF,
       'unicorn/prefer-module': OFF,
-    },
-  },
-  {
-    files: ['**/*.spec.{js,ts,jsx,tsx}', '**/*.test.{js,ts,jsx,tsx}'],
-    ...jest.configs['flat/recommended'],
-    rules: {
-      ...jest.configs['flat/recommended'].rules,
     },
   },
   {

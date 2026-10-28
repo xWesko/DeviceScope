@@ -1,35 +1,43 @@
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 const colorsLight = {
-    gray100: '#DFDFDF',
-    gray200: '#A1A1A1',
-    gray400: '#4D4D4D',
-    gray50: '#EFEFEF',
-    gray800: '#303030',
-    purple100: '#E1E1EF',
-    purple50: '#1B1A23',
-    purple500: '#44427D',
-    red500: '#C13333',
-    skeleton: '#A1A1A1',
+    accent: '#1F4FD8',
+    accentSoft: '#E7EDFB',
+    background: '#F5F6F8',
+    border: '#E1E4E8',
+    danger: '#B42318',
+    neutralSoft: '#EEF0F3',
+    onAccent: '#FFFFFF',
+    success: '#1E7F4F',
+    successSoft: '#E4F3EB',
+    surface: '#FFFFFF',
+    text: '#1A1D21',
+    textMuted: '#5F6670',
+    warning: '#9A5700',
+    warningSoft: '#FBEFDC',
 };
 const colorsDark = {
-    gray100: '#000000',
-    gray200: '#BABABA',
-    gray400: '#969696',
-    gray50: '#EFEFEF',
-    gray800: '#E0E0E0',
-    purple100: '#252732',
-    purple50: '#1B1A23',
-    purple500: '#A6A4F0',
-    red500: '#C13333',
-    skeleton: '#303030',
+    accent: '#7FA2FF',
+    accentSoft: '#1D2742',
+    background: '#0F1115',
+    border: '#2A2F37',
+    danger: '#F07171',
+    neutralSoft: '#22262D',
+    onAccent: '#0F1115',
+    success: '#5CC98F',
+    successSoft: '#15291F',
+    surface: '#171A20',
+    text: '#E8EAED',
+    textMuted: '#9AA1AB',
+    warning: '#F0B357',
+    warningSoft: '#2E2414',
 };
-const sizes = [12, 16, 24, 32, 40, 80];
+const sizes = [4, 8, 12, 13, 14, 16, 20, 24, 28, 32];
 export const config = {
     backgrounds: colorsLight,
     borders: {
         colors: colorsLight,
-        radius: [4, 16],
-        widths: [1, 2],
+        radius: [8, 12],
+        widths: [1],
     },
     colors: colorsLight,
     fonts: {
@@ -39,8 +47,8 @@ export const config = {
     gutters: sizes,
     navigationColors: {
         ...DefaultTheme.colors,
-        background: colorsLight.gray50,
-        card: colorsLight.gray50,
+        background: colorsLight.background,
+        card: colorsLight.surface,
     },
     variants: {
         dark: {
@@ -54,8 +62,8 @@ export const config = {
             },
             navigationColors: {
                 ...DarkTheme.colors,
-                background: colorsDark.purple50,
-                card: colorsDark.purple50,
+                background: colorsDark.background,
+                card: colorsDark.surface,
             },
         },
     },

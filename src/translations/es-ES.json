@@ -1,0 +1,114 @@
+{
+  "devicescope": {
+    "common_unavailable": "No disponible",
+    "common_unknown": "Desconocido",
+    "common_yes": "Sí",
+    "common_no": "No",
+    "error_boundary": {
+      "title": "Algo salió mal.",
+      "description": "No se pudo mostrar el diagnóstico. Intenta de nuevo.",
+      "cta": "Recargar pantalla"
+    },
+    "diagnostics": {
+      "title": "DeviceScope",
+      "subtitle": "Diagnóstico del dispositivo",
+      "loading": "Consultando información…",
+      "updated_at": "Última actualización: {{date}}",
+      "refresh": "Actualizar información",
+      "copy": "Copiar diagnóstico",
+      "share": "Compartir",
+      "copied": "Diagnóstico copiado al portapapeles."
+    },
+    "friendly_name": {
+      "android_phone": "Teléfono Android",
+      "android_tablet": "Tablet Android",
+      "android_tv": "TV Android",
+      "android_other": "Dispositivo Android",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "ios_other": "Dispositivo iOS"
+    },
+    "device_type": {
+      "phone": "Teléfono",
+      "tablet": "Tablet",
+      "tv": "TV",
+      "desktop": "Escritorio",
+      "other": "Otro",
+      "unknown": "Desconocido"
+    },
+    "kiosk_state": {
+      "locked": "Modo Lock Task activo",
+      "pinned": "Pantalla fijada (Screen Pinning)",
+      "none": "Sin bloqueo de tareas activo",
+      "unavailable": "No disponible",
+      "unknown": "No se pudo determinar"
+    },
+    "kiosk_badge": {
+      "locked": "Lock Task: Activo",
+      "pinned": "Lock Task: Pantalla fijada",
+      "none": "Lock Task: Inactivo",
+      "unavailable": "Lock Task: No disponible",
+      "unknown": "Lock Task: Desconocido"
+    },
+    "kiosk_note": {
+      "locked": "Android está en Lock Task Mode. Esto no demuestra por sí solo que el hardware sea un kiosco dedicado.",
+      "pinned": "La pantalla fue fijada por el usuario. No equivale a un modo kiosco empresarial administrado.",
+      "none": "No hay Lock Task activo. Esto no significa que el equipo no sea un kiosco: puede usar un launcher propio, otra solución MDM o hardware dedicado.",
+      "unavailable": "La consulta de Lock Task solo existe en Android.",
+      "unknown": "La consulta nativa falló o devolvió un valor no reconocido."
+    },
+    "orientation": {
+      "portrait": "Vertical",
+      "landscape": "Horizontal"
+    },
+    "battery_state": {
+      "charging": "Cargando",
+      "full": "Carga completa",
+      "unplugged": "Desconectado",
+      "unknown": "Desconocido"
+    },
+    "sections": {
+      "device": "Dispositivo",
+      "os": "Sistema operativo",
+      "screen": "Pantalla",
+      "resources": "Hardware y recursos",
+      "kiosk": "Estado de kiosco (Android)",
+      "app": "Aplicación"
+    },
+    "fields": {
+      "platform": "Plataforma",
+      "device_type": "Tipo de equipo",
+      "manufacturer": "Fabricante",
+      "brand": "Marca",
+      "model": "Modelo",
+      "device_id": "Identificador de modelo",
+      "device_name": "Nombre del dispositivo",
+      "is_emulator": "Emulador / simulador",
+      "system_name": "Sistema",
+      "os_version": "Versión",
+      "api_level": "Nivel de API Android",
+      "abis": "Arquitecturas de CPU",
+      "window_size": "Ventana (lógica)",
+      "window_pixels": "Ventana (píxeles aprox.)",
+      "screen_size": "Pantalla completa (lógica)",
+      "pixel_ratio": "Densidad (PixelRatio)",
+      "font_scale": "Escala de fuente",
+      "orientation": "Orientación",
+      "total_disk": "Almacenamiento total",
+      "free_disk": "Almacenamiento libre",
+      "total_memory": "Memoria total (RAM)",
+      "battery_level": "Nivel de batería",
+      "battery_state": "Estado de carga",
+      "low_power": "Modo de ahorro de energía",
+      "kiosk_state": "Estado Lock Task",
+      "app_name": "Nombre",
+      "app_version": "Versión",
+      "build_number": "Compilación",
+      "bundle_id": "Identificador del paquete"
+    },
+    "notes": {
+      "window_pixels": "Calculado como ventana × densidad; no necesariamente es la resolución completa del panel.",
+      "emulator_battery": "En emuladores y simuladores la batería suele ser simulada."
+    }
+  }
+}

@@ -1,14 +1,13 @@
 {
   "extends": "@react-native/typescript-config",
   "compilerOptions": {
-    "types": ["react-native", "jest", "node"],
+    "types": ["react-native", "node"],
     "paths": {
       "@/*": ["./src/*"]
     },
     "noUnusedLocals": true
   },
   "include": [
-    "src/tests/**/*",
     "./src/**/*",
     "index.d.ts",
     "*.mjs",
